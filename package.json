@@ -1,16 +1,22 @@
 {
-  "name": "copy-text-as-html",
-  "version": "1.0.0",
+  "name": "",
+  "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node script/build.js",
+    "dev": "node script/dev.js",
+    "lint": "npx rome check ./script ./src",
+    "format": "npx rome format ./script ./src",
+    "clean": "rm -rf ./dist",
+    "prepack": "npm run clean && npm run build"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "clipboard-polyfill": "^2.8.6",
-    "parcel": "^1.12.3",
-    "typescript": "^3.6.2"
+    "barely-a-dev-server": "^0.4.5",
+    "esbuild": "^0.16.4",
+    "rome": "^11.0.0"
+  },
+  "dependencies": {
+    "clipboard-polyfill": "^4.0.0-rc1"
   }
 }

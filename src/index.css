@@ -1,0 +1,44 @@
+html {
+  font-family: -apple-system, Roboto, Ubuntu, Tahoma, sans-serif;
+  font-size: 1.25rem;
+  padding: 2em;
+  display: grid;
+  justify-content: center;
+}
+
+body {
+  margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background: #000D;
+    color: #EEE;
+  }
+
+  a {
+    color: #669df5;
+  }
+
+  a:visited {
+    color: #af73d5;
+  }
+
+  textarea {
+    background: #000D;
+    color: #EEE;
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
+button {
+  font-size: 1em;
+}
+
+textarea {
+  width: 80vw;
+  min-height: 50vh;
+}

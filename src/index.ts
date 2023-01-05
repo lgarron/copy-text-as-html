@@ -1,22 +1,29 @@
 import { ClipboardItem, write } from "clipboard-polyfill";
 
-window.addEventListener("load", function () {
-  const status = document.querySelector(".status")!;
-  document
-    .querySelector("button")!
-    .addEventListener("click", async function () {
-      status.textContent = "…";
+const textarea = document.querySelector("textarea") as HTMLTextAreaElement;
 
-      const clipboardItem = new ClipboardItem({
-        "text/html": document.querySelector("textarea")!.value,
+const status = document.querySelector(".status")!;
+document.querySelector("button")!.addEventListener("click", async function () {
+  status.textContent = "…";
+
+  const clipboardItem = new ClipboardItem({
+    "text/html": textarea.value,
+  });
+  write([clipboardItem]).then(
+    function () {
+      textarea.animate([{ opacity: 0.25 }, { opacity: 1 }], {
+        duration: 250,
+        easing: "ease-out",
       });
-      write([clipboardItem]).then(
-        function () {
-          status.textContent = "✅";
-        },
-        function () {
-          status.textContent = "❌";
-        },
-      );
-    });
+      status.textContent = "✅";
+    },
+    function () {
+      status.textContent = "❌";
+    },
+  );
+});
+
+textarea.addEventListener("input", () => {
+  textarea.style.height = "2em";
+  textarea.style.height = `${textarea.scrollHeight}px`;
 });

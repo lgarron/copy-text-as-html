@@ -12,8 +12,8 @@ body {
 
 @media (prefers-color-scheme: dark) {
   html {
-    background: #000D;
-    color: #EEE;
+    background: #000d;
+    color: #eee;
   }
 
   a {
@@ -25,8 +25,8 @@ body {
   }
 
   textarea {
-    background: #000D;
-    color: #EEE;
+    background: #000d;
+    color: #eee;
   }
 }
 

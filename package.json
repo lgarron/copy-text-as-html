@@ -4,19 +4,19 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "build": "node script/build.js",
-    "dev": "node script/dev.js",
-    "lint": "npx rome check ./script ./src",
-    "format": "npx rome format ./script ./src",
-    "clean": "rm -rf ./dist",
-    "prepack": "npm run clean && npm run build"
+    "lint": "make lint",
+    "format": "make format",
+    "prepublishOnly": "make prepublishOnly"
   },
   "devDependencies": {
-    "barely-a-dev-server": "^0.4.5",
-    "esbuild": "^0.16.4",
-    "rome": "^11.0.0"
+    "@biomejs/biome": "^1.9.4",
+    "barely-a-dev-server": "^0.7.1",
+    "esbuild": "^0.25.0"
   },
   "dependencies": {
     "clipboard-polyfill": "^4.0.0-rc1"
+  },
+  "@cubing/deploy": {
+    "https://garron.net/app/copy-text-as-html": {}
   }
 }

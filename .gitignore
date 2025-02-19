@@ -4,3 +4,5 @@
 
 # Legacy (Parcel)
 /.cache
+
+/package-lock.json
